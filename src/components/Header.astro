@@ -1,0 +1,16 @@
+---
+import Menu from './Menu.astro';
+import Navigation from './Navigation.astro';
+const { currentPage } = Astro.props;
+---
+<header>
+    <Menu/>
+    <Navigation currentPage={currentPage} />
+</header>
+<style>
+    header {
+        padding: 1rem 0;
+        border-bottom: 2px solid #e5e7eb;
+        margin-bottom: 2rem;
+    }
+</style>
