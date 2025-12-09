@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+const allProducts = Object.values( import.meta.glob('./products/*.md', {eager: true}))
+---
+<BaseLayout pageTitle="Products" currentPage="products">
+  <h2>Our Products</h2>
+  <p>Explore our range of products designed to meet your needs.</p>
+  <h3>Products</h3>
+  { allProducts.map((p:any) => 
+    <BlogPost title={p.frontmatter.title} url={p.url} />
+    ) 
+  }
+</BaseLayout>
